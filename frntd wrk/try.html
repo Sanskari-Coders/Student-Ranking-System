@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Filter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    h2 {
+        text-align: center;
+    }
+    .filter-section {
+        text-align: start;
+        margin-left: 20px;
+    }
+    .buttons-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .filter-dropdown {
+        margin-bottom: 10px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Course Filter</h2>
+
+    <div class="filter-section">
+        <label for="semester">Select Semester:</label>
+        <select id="semester" class="filter-dropdown" onchange="filterSemester()">
+            <option value="sem1">Semester 1</option>
+            <option value="sem2">Semester 2</option>
+            <option value="sem3">Semester 3</option>
+            <option value="sem4">Semester 4</option>
+            <option value="sem5">Semester 5</option>
+            <option value="sem6">Semester 6</option>
+        </select>
+    </div>
+    <div class="buttons-container">
+        <button class="button" >BCA</button>
+        <button class="button" >BSC(IT)</button>
+        <button class="button" >BSC(PHY)</button>
+        <button class="button" >BSC(CHE)</button>
+        <button class="button" >BSC(MAT)</button>
+        <button class="button" >BSC(BOT)</button>
+        <button class="button" >BSC(ZOO)</button>
+    </div>
+</div>
+
+<script>
+    // function filterCourse(course) {
+    //     var semester = document.getElementById('semester').value;
+    //     alert('You selected ' + course + ' for ' + semester);
+    function filterSemester() {
+        var semester = document.getElementById('semester').value;
+        var content = document.getElementById('content');
+        // Here you can add logic to display content based on the selected semester
+        // Show the content
+        content.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
