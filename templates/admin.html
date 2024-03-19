@@ -2,14 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Excel File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #007bff;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .upload-message {
+            margin-top: 10px;
+            color: #888;
+        }
+        .success-message {
+            margin-top: 10px;
+            color: #4caf50;
+        }
+        .error-message {
+            margin-top: 10px;
+            color: #f44336;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h2>Upload Excel File</h2>
-    <form action="{% url "upload_excel" %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="myfile" accept=".xlsx">
-        <button type="submit">Upload</button>
-    </form>
+    <div class="container">
+        <h2>Upload Excel File</h2>
+        <form action="{% url 'upload_excel' %}" method="post" enctype="multipart/form-data" id="upload-form">
+            {% csrf_token %}
+            <input type="file" name="myfile" id="file-input" accept=".xlsx">
+            <div class="progress-bar">
+                <div class="progress" id="progress-bar"></div>
+            </div>
+            <div class="upload-message" id="upload-message">No file selected</div>
+            <div class="success-message" id="success-message" style="display: none;">File uploaded successfully!</div>
+            <div class="error-message" id="error-message" style="display: none;">Error uploading file.</div>
+            <button type="submit" id="upload-button">Upload</button>
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const progressBar = document.getElementById('progress-bar');
+        const uploadMessage = document.getElementById('upload-message');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+        const uploadButton = document.getElementById('upload-button');
+        const uploadForm = document.getElementById('upload-form');
+
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                uploadMessage.innerText = fileInput.files[0].name;
+            } else {
+                uploadMessage.innerText = 'No file selected';
+            }
+        });
+
+        uploadForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(uploadForm);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', uploadForm.action);
+
+            xhr.upload.addEventListener('progress', function(event) {
+                if (event.lengthComputable) {
+                    const percentComplete = (event.loaded / event.total) * 100;
+                    progressBar.style.width = percentComplete + '%';
+                }
+            });
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                } else {
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                }
+            };
+
+            xhr.send(formData);
+        });
+    </script>
 </body>
 </html>
