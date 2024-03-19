@@ -24,57 +24,9 @@
             text-align: center;
         }
 
-        .filter-section {
-            text-align: start;
-            margin-left: 20px;
-        }
-
-        .radio-inputs {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            border-radius: 0.5rem;
-            background-color: #EEE;
-            box-sizing: border-box;
-            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-            padding: 0.25rem;
-            width: 300px;
-            font-size: 14px;
-        }
-
-        .radio-inputs .radio {
-            flex: 1 1 auto;
-            text-align: center;
-        }
-
-        .radio-inputs .radio input {
-            display: none;
-        }
-
-        .radio-inputs .radio .name {
-            display: flex;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.5rem;
-            border: none;
-            padding: .5rem 0;
-            color: rgba(51, 65, 85, 1);
-            transition: all .15s ease-in-out;
-        }
-
-        .radio-inputs .radio input:checked+.name {
-            background-color: #fff;
-            font-weight: 600;
-        }
-
         .buttons-container {
             margin-top: 20px;
             text-align: center;
-        }
-
-        .filter-dropdown {
-            margin-bottom: 10px;
         }
 
         .button {
@@ -88,40 +40,113 @@
             cursor: pointer;
             text-decoration: none;
         }
-        .yearinfo{
+
+        /* Styling for student profiles */
+        .profile-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .student-profile {
+            flex-basis: 30%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .student-profile:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .student-profile h3 {
+            margin-top: 0;
             text-align: center;
+            color: #007bff;
+        }
+
+        .profile-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+        }
+
+        .profile-details strong {
+            font-weight: bold;
+        }
+        .department-performance {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .department-performance h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .department-performance-item {
+            margin-bottom: 10px;
+        }
+
+        .department-name {
+            font-weight: bold;
+        }
+
+        .average-cgpa {
+            font-weight: bold;
+            color: green;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        {% comment %} <div class="filter-section">
-            <div class="radio-inputs">
-                <label class="radio">
-                    <input type="radio" name="radio" checked="">
-                    <span class="name">First Year</span>
-                </label>
-                <label class="radio">
-                    <input type="radio" name="radio">
-                    <span class="name">Second Year</span>
-                </label>
-                <label class="radio">
-                    <input type="radio" name="radio">
-                    <span class="name">Third Year</span>
-                </label>
-            </div>
-        </div> {% endcomment %}
-        
-        <a href="{% url "upload_excel" %}"><button class="button" style="background:red">ADMIN UPLOAD</button></a>
+        <h2>Course Filter</h2>
         <div class="buttons-container">
-            <a href="{% url "BCA" %}"><button class="button">BCA       </button></a>
-            <a href="{% url "BSC(IT)" %}"><button class="button">BSC(IT)   </button></a>
-            <a href="{% url "BSC(PHY)" %}"><button class="button">BSC(PHY)  </button></a>
-            <a href="{% url "BSC(CHE)" %}"><button class="button">BSC(CHE)  </button></a>
-            <a href="{% url "BSC(MAT)" %}"><button class="button">BSC(MAT)  </button></a>
-            <a href="{% url "BSC(BOT)" %}"><button class="button">BSC(BOT)  </button></a>
-            <a href="{% url "BSC(ZOO)" %}"><button class="button">BSC(ZOO)  </button></a>
+            <a href="{% url 'upload_excel' %}"><button class="button" style="background:red">ADMIN UPLOAD</button></a>
+            <br>
+            <a href="{% url 'BCA' %}"><button class="button">BCA</button></a>
+            <a href="{% url 'BSC(IT)' %}"><button class="button">BSC(IT)</button></a>
+            <a href="{% url 'BSC(PHY)' %}"><button class="button">BSC(PHY)</button></a>
+            <a href="{% url 'BSC(CHE)' %}"><button class="button">BSC(CHE)</button></a>
+            <a href="{% url 'BSC(MAT)' %}"><button class="button">BSC(MAT)</button></a>
+            <a href="{% url 'BSC(BOT)' %}"><button class="button">BSC(BOT)</button></a>
+            <a href="{% url 'BSC(ZOO)' %}"><button class="button">BSC(ZOO)</button></a>
         </div>
+
+        <!-- Second container for top 3 student profiles -->
+        
+        <div class="profile-container">
+            {% for index, student in top_student.iterrows %}
+            <div class="student-profile">
+                <h3>Top Student {{forloop.counter}}</h3>
+                <div class="profile-details">
+                    <p><strong>Name:</strong>{{student.Name}}</p>
+                    <p><strong>Regd No:</strong> {{student.Regd_No}}</p>
+                    <p><strong>CGPA:</strong>{{student.CGPA}}</p>
+                    <p><strong>SGPA:</strong>{{student.SGPA}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Department Performance</h2>
+        <div class="department-performance">
+            {% for index, dept in dept_performance_sorted.iterrows %}
+                <div class="department-performance-item">
+                    <h3>Department: <span class="department-name">{{ dept.Department}}</span></h3>
+                    <p>Average CGPA: <span class="average-cgpa">{{ dept.CGPA|floatformat:"2" }}</span></p>
+                </div>
+            {% endfor %}
+        </div> 
     </div>
 </body>
 </html>
