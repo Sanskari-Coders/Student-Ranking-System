@@ -1,3 +1,127 @@
-<a href="{% url 'bca' %}">
-    <button class="button">BCA</button>
-</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .filter-section {
+            text-align: start;
+            margin-left: 20px;
+        }
+
+        .radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 300px;
+            font-size: 14px;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+        }
+
+        .radio-inputs .radio input:checked+.name {
+            background-color: #fff;
+            font-weight: 600;
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .filter-dropdown {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .yearinfo{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% comment %} <div class="filter-section">
+            <div class="radio-inputs">
+                <label class="radio">
+                    <input type="radio" name="radio" checked="">
+                    <span class="name">First Year</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <span class="name">Second Year</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="radio">
+                    <span class="name">Third Year</span>
+                </label>
+            </div>
+        </div> {% endcomment %}
+        
+        <a href="{% url "upload_excel" %}"><button class="button" style="background:red">ADMIN UPLOAD</button></a>
+        <div class="buttons-container">
+            <a href="{% url "BCA" %}"><button class="button">BCA       </button></a>
+            <a href="{% url "BSC(IT)" %}"><button class="button">BSC(IT)   </button></a>
+            <a href="{% url "BSC(PHY)" %}"><button class="button">BSC(PHY)  </button></a>
+            <a href="{% url "BSC(CHE)" %}"><button class="button">BSC(CHE)  </button></a>
+            <a href="{% url "BSC(MAT)" %}"><button class="button">BSC(MAT)  </button></a>
+            <a href="{% url "BSC(BOT)" %}"><button class="button">BSC(BOT)  </button></a>
+            <a href="{% url "BSC(ZOO)" %}"><button class="button">BSC(ZOO)  </button></a>
+        </div>
+    </div>
+</body>
+</html>

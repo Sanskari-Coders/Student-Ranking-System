@@ -33,27 +33,18 @@
 </head>
 
 <body style="background-color: black;">
+    {% for index, student in sorted_df.iterrows %}
     <div class="student-info">
-        <p><strong>Rank:</strong> 1</p>
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Roll Number:</strong> 123456789012</p>
-        <p><strong>Current SGPA:</strong> 3.8</p>
-        <p><strong>CGPA:</strong> 3.7</p>
+        <p><strong>Rank:</strong> {{ forloop.counter }} <!-- Starting rank from 1 -->
+        <p><strong>Name:</strong> {{ student.Name }}</p>
+        <p><strong>Roll Number:</strong> {{ student.Regd_No }}</p>
+        <p><strong>Semester:</strong> {{ student.Semester }}</p>
+        <p><strong>Current SGPA:</strong> {{ student.SGPA }}</p>
+        <p><strong>CGPA:</strong> {{ student.CGPA }}</p>
     </div>
-    <div class="student-info">
-        <p><strong>Rank:</strong> 1</p>
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Roll Number:</strong> 123456789012</p>
-        <p><strong>Current SGPA:</strong> 3.8</p>
-        <p><strong>CGPA:</strong> 3.7</p>
-    </div>
-    <div class="student-info">
-        <p><strong>Rank:</strong> 1</p>
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Roll Number:</strong> 123456789012</p>
-        <p><strong>Current SGPA:</strong> 3.8</p>
-        <p><strong>CGPA:</strong> 3.7</p>
-    </div>
+{% endfor %}
+
+
 
 </body>
 

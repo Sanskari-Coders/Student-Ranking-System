@@ -15,18 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 from STU_RNK_SYS import views as main_views
-from departmentwiseview import views as dept_views
+from departmentwiseview import urls as dept_urls
+from datastore import views as data_store_views
 
 
 
 urlpatterns = [
     path('',main_views.home),
-    path('bca/',dept_views.bca ,name='bca'),
+    path('upload_excel/',data_store_views.upload_data,name='upload_excel'),
+    path('departmentwiseviews/',include(dept_urls)),
     path('admin/', admin.site.urls),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
