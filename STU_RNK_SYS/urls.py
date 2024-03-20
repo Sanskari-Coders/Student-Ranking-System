@@ -27,7 +27,7 @@ from datastore import views as data_store_views
 
 
 urlpatterns = [
-    path('',main_views.index,name='INDEX'),
+    path('',main_views.index),
     path('home/',main_views.home,name='HOME'),
     path('upload_excel/',data_store_views.upload_data,name='upload_excel'),
     path('departmentwiseviews/',include(dept_urls)),

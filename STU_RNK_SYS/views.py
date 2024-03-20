@@ -5,6 +5,8 @@ import pandas as pd
 
 def index(request):
     return render(request,'index.html')
+
+
 def home(request):
     data = Student.objects.all()
     student_data = [{'Name': student.name,'Regd_No':student.registration_number,'Department':student.department,'Semester':student.semester,'SGPA':student.sgpa,'CGPA': student.cgpa} for student in data]
