@@ -1,4 +1,4 @@
 let letsgo=document.getElementById("letsgo")
 letsgo.addEventListener("click",function(){
-window.location=("home.html")
+window.location=("{% url 'HOME' %}")
 })
