@@ -3,8 +3,8 @@ from django.http import request
 from datastore.models import Student
 import pandas as pd
 
-def index(request):
-    return render(request,'index.html')
+def login(request):
+    return render(request,'login.html')
 
 
 def home(request):
