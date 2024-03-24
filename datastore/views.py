@@ -21,6 +21,4 @@ def upload_data(request):
                 cgpa=row['CGPA']
             )
             student.save()
-            print('uploaded successfully')
-            messages.success(request, 'Data uploaded successfully.')
     return render(request, 'admin.html')
