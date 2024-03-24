@@ -75,33 +75,33 @@ WSGI_APPLICATION = 'STU_RNK_SYS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER':'postgres',
-#         'PASSWORD':'ZbxsRHbTzXtUDxNbbanduayuzNOHvgnj',
-#         'HOST':'roundhouse.proxy.rlwy.net',
-#         'PORT':'37439',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER':'postgres',
+        'PASSWORD':'ZbxsRHbTzXtUDxNbbanduayuzNOHvgnj',
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'PORT':'37439',
+    }
+}
 # settings.py
 
 import os
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DATABASE', 'verceldb'),
-        'USER': os.getenv('POSTGRES_USER', 'default'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'fthRN6zs7inL'),
-        'HOST': os.getenv('POSTGRES_HOST', 'ep-cool-resonance-a1w702e5-pooler.ap-southeast-1.aws.neon.tech'),
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('POSTGRES_DATABASE', 'verceldb'),
+#         'USER': os.getenv('POSTGRES_USER', 'default'),
+#         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'fthRN6zs7inL'),
+#         'HOST': os.getenv('POSTGRES_HOST', 'ep-cool-resonance-a1w702e5-pooler.ap-southeast-1.aws.neon.tech'),
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#         },
+#     }
+# }
 
 
 # Password validation

@@ -9,6 +9,3 @@ class Student(models.Model):
     cgpa = models.FloatField()
     def __str__(self):
         return f"{self.name} - {self.registration_number}"
-
-class data_store(models.Model):
-    excel=models.FileField(upload_to='DATA',blank=False,null=False)
