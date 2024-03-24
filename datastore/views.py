@@ -5,7 +5,6 @@ from datastore.models import Student
 import pandas as pd
 # Create your views here.
 
-
 def upload_data(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -21,4 +20,5 @@ def upload_data(request):
                 cgpa=row['CGPA']
             )
             student.save()
+        return render(request,'home.html')
     return render(request, 'admin.html')
