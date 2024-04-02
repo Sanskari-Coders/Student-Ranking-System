@@ -17,10 +17,14 @@
 .bgphoto{
     width: 100%;
     height: 60%;
-    background-image: url(/static/data/frontpage-removebg\ \(1\)\ \(1\).png);
+    /* background-image: url(/static/data/frontpage-removebg\ \(1\)\ \(1\).png); */
+    /* background-color: red; */
     background-position:center;
     background-size: contain;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .loging{
     width: 100%;
