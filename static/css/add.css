@@ -15,40 +15,49 @@
   overflow: hidden;
 }
   .slider_container {
-  background-color: transparent;
+   background-color: transparent;
     width: 100%;
     height: 40%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+
  
   }
   .rankbox{
     width: 100%;
-    height: 60%;
+    height: 45%;
     background-color: transparent;
 
+
   }
+
   .slider {
     position: relative;
     width: 90%;
-    height: 90%;
+    height: 95%;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+  border-radius: 10px;
     align-items: center;
     justify-content: space-between;
     animation: 10s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+    
+  
   }
   .slide {
     position: relative;
+    border-radius: 10px;
     min-width: 100%;
     height: 100%;
+    overflow: hidden;
+    margin: 0px 5px;
   }
   .slide img {
     width: 100%;
     height: 100%;
+
   }
   .slide .caption {
     position: absolute;
@@ -64,19 +73,23 @@
     border-radius: 0 2rem 2rem 0;
   }
   .slide.one {
-    background: rgb(182, 19, 109);
+    background: rgba(128, 128, 128, 0.576);
   }
   .slide.two {
-    background: rgb(255, 64, 64);
+    /* background: rgb(255, 64, 64); */
+    background: rgba(128, 128, 128, 0.576);
   }
   .slide.three {
-    background: rgb(11, 173, 188);
+    /* background: rgb(11, 173, 188); */
+    background: rgba(128, 128, 128, 0.576);
   }
   .slide.four {
-    background: rgb(11, 188, 14);
+    /* background: rgb(11, 188, 14); */
+    background: rgba(128, 128, 128, 0.576);
   }
   .slide.five {
-    background: rgb(173, 11, 188);
+    /* background: rgb(173, 11, 188); */
+    background: rgba(128, 128, 128, 0.576);
   }
   @keyframes sliding {
     0% {
@@ -108,3 +121,85 @@
     }
   }
   
+
+  /* leaderbox */
+
+  #leaderbox{
+    width: 100%;
+    height: 15%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  
+  }
+  .leaderbox_text{
+    font-size: 23px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .leaderbox_type{
+    width: 70%;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.404);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .alltime{
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+
+  /* rankbox */
+
+  .ranking_contener{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+  }
+  .rankingbox{
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  }
+  .rankingstudentname{
+    color: white;
+    font-size: 20px;
+  }
+
+  .rank2nd{
+    width: 100%;
+    height: 70%;
+    background-color: silver;
+    border-radius: 10px 10px 0px 0px ;
+  }
+  .rank1st{
+    width: 100%;
+    height: 90%;
+    background-color: gold;
+    border-radius: 10px 10px 0px 0px ;
+  }
+  .rank3rd{
+    width: 100%;
+    height: 60%;
+    background-color:rgb(205, 127, 50);
+    border-radius: 10px 10px 0px 0px ;
+  }
