@@ -190,16 +190,42 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     height: 70%;
     background-color: silver;
     border-radius: 10px 10px 0px 0px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+
   }
   .rank1st{
     width: 100%;
     height: 90%;
     background-color: gold;
     border-radius: 10px 10px 0px 0px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
   }
   .rank3rd{
     width: 100%;
     height: 60%;
     background-color:rgb(205, 127, 50);
     border-radius: 10px 10px 0px 0px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .rankinnumber{
+    color: white;
+    font-size: 30px;
+  }
+  #rankingdepartment{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
   }
