@@ -1,23 +1,5 @@
-document.getElementById("bb")
-let math=document.getElementById("math")
-math.Value=""
-bb.addEventListener("click",function(){
-
-  console.log(math.value)
-
-})
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
-
-
-
-
-
-
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
