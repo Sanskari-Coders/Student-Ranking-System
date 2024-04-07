@@ -2,7 +2,7 @@ from django.urls import path
 
 from departmentwiseview import views
 urlpatterns = [
-    path('BCA|IT/'  ,views.BCAIT    ,name='BCA|IT'),
+    path('BCAIT/'  ,views.BCAIT    ,name='BCAIT'),
     path('BSC(PHY)/',views.BSC_PHY,name='BSC(PHY)'),
     path('BSC(CHE)/',views.BSC_CHE,name='BSC(CHE)'),
     path('BSC(MAT)/',views.BSC_MAT,name='BSC(MAT)'),
