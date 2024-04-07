@@ -1,243 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Filter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .buttons-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        /* Styling for student profiles */
-        .profile-container {
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .student-profile {
-            flex-basis: 30%;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .student-profile:hover {
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .student-profile h3 {
-            margin-top: 0;
-            text-align: center;
-            color: #007bff;
-        }
-
-        .profile-details {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .profile-details p {
-            margin: 5px 0;
-        }
-
-        .profile-details strong {
-            font-weight: bold;
-        }
-        .department-performance {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-        }
-
-        .department-performance h3 {
-            margin-top: 0;
-            color: #007bff;
-        }
-
-        .department-performance-item {
-            margin-bottom: 10px;
-        }
-
-        .department-name {
-            font-weight: bold;
-        }
-
-        .average-cgpa {
-            font-weight: bold;
-            color: green;
-        }
-    </style>
-    <link rel="stylesheet" href="{% static "css/home.css" %}">
-    <link rel="stylesheet" href="{% static "css/add.css" %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+{% comment %} <link rel="stylesheet" href="/static/css/home.css"> {% endcomment %}
+<link rel="stylesheet" href="{% static "css/homee.css" %}">
+<link rel="stylesheet" href="{% static "css/add.css" %}">
+{% comment %} <link rel="stylesheet" href="/static/css/add.css"> {% endcomment %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
 
-    
-    <section id="firstview">
-        <section class="slider_container">
-        <section class="slider">
-                <div class="slide one">
-                <img src="/static/data/cutm.png" alt="" width="100%" />
-                <span class="caption"> exam 12/13/2024  </span>
-                </div>
-        <div class="slide two">
-                <img src="/static/data/CBSE-10th-Result-2024-Date-Website-how-to-check.webp" alt=""  width="100%"  />
-                <span class="caption"> resualt </span>
-                </div>
-        <div class="slide three">
-                <img src="/static/data/sddefault.jpg" alt="" width="100%" />
-                <span class="caption"></span>
-                </div>
-        <div class="slide four">
-                <img src="/static/data/national-sports-day4.jpg" alt="" width="100%" />
-                <span class="caption">30/11/2023  </span>
-                </div>
-        <div class="slide four">
-                <img src="...IMAGE LINK..." alt="" width="100%" />
-                <span class="caption">  </span>
-                </div>
-        </section>
-        </section>
-        <!---------------- leaderbox---------------- -->
-        <section id="leaderbox">
-            <div class="leaderbox_text">Leaderbord</div>
-            <div class="leaderbox_type">
-                <a href="" > <span class="alltime">All Time</span></a>
-                <a href=""> <span>Top 10</span></a>
-            </div>
-        </section>
+<!-- ---------------------------------screen 1 ---------------------------------------------------------- -->
+
+  
+<section id="firstview">
+
+<section id="leaderbox">
+<div class="leaderbox_text">Leaderbord</div>
+<div class="leaderbox_type">
+<a href="" > <span class="alltime">All Time</span></a>
+<a href=""> <span>Top 10</span></a></div>
+</section>
 
 
-   <!-- ranking sysytem -->
+<!-- ranking sysytem -->
 
-    <section class="ranking_contener">
+<section class="ranking_contener">
 
-        <div class="rankingbox">
-            <span id="StudenTWO" class="rankingstudentname">Aryaman</span>
-            <div class="rank2nd">
-                <span class="rankinnumber">#2</span>
-                <span id="rankingdepartment">BCA</span>
-                <span id="rankingcgpa">8.1</span>
-            </div>
-      </div>
+<div class="rankingbox">
+<span id="StudenTWO" class="rankingstudentname">Aryaman</span>
+<div class="rank2nd">
+<span class="rankinnumber">#2</span>
+<span id="rankingdepartment">BCA</span>
+<span id="rankingcgpa">8.1</span>
+</div>
+</div>
 
-     <div class="rankingbox">
-        <span id="StudentONE" class="rankingstudentname">Adarsha</span>
-        <div class="rank1st">
-            <span class="rankinnumber">#1</span>
-            <span id="rankingdepartment">IT</span>
-            <span id="rankingcgpa">8.9</span>
-        </div>
-     </div>
+<div class="rankingbox">
+<span id="StudentONE" class="rankingstudentname">Adarsha</span>
+<div class="rank1st">
+<span class="rankinnumber">#1</span>
+<span id="rankingdepartment">IT</span>
+<span id="rankingcgpa">8.9</span>
+</div>
+</div>
 
-    <div class="rankingbox">
-        <span id="StudentTHREE" class="rankingstudentname">Anish</span>
-        <div class="rank3rd">
-            <span class="rankinnumber">#3</span>
-            <span id="rankingdepartment">BCA</span>
-            <span id="rankingcgpa">7.1</span>
-        </div>
-    </div>
-    
-    </section>
+<div class="rankingbox">
+<span id="StudentTHREE" class="rankingstudentname">Anish</span>
+<div class="rank3rd">
+<span class="rankinnumber">#3</span>
+<span id="rankingdepartment">BCA</span>
+<span id="rankingcgpa">7.1</span></div>
 
-    </section>
+</div>
+</section>
+</section>
 
 
+<!-- ---------------------------------screen 2 -------------------------------------------------------------------->
+<span></span>
+<div class="departmentname" >Department Result</div>
+<section class="department_container">
+
+
+<!-- ----------BCA department---------------------- -->
+
+<div class="department_box" id="departmentBCA">
+<a href="">
+<div class="department_logo_box">   
+<div class="department_logo" > <i class="fa-solid fa-code" style="color:rgb(91, 97, 217);"></i></div>   <div class="department_pluse"><i class="fa-solid fa-plus"></i> </div>      
+</div>
+<div class="department_name"> BCA/IT</div></a>
+</div>
+
+<!-- ----------MATH department---------------------->
+<div class="department_box" id="departmentMATH" style="background-color: rgb(206, 253, 255);">
+<a href="">
+<div class="department_logo_box">   
+<div class="department_logo" ><i class="fa-solid fa-calculator" style="color: rgb(75, 184, 189);"></i></div>   <div class="department_pluse" style="background-color: rgb(75, 184, 189);"> <i class="fa-solid fa-plus"></i> </div>      
+</div>
+<div class="department_name"> MATH</div></a>
+</div>
+
+ <!-- ----------zoology department------------------>
+<div class="department_box" id="departmenzoology" style="background-color: rgb(255, 213, 224);">
+<a href="">
+<div class="department_logo_box" >   
+<div class="department_logo"> <img src="/static/data/zoology.png" width="80%" alt=""> </div>  <div class="department_pluse" style="background-color: rgb(220, 24, 84);"><i class="fa-solid fa-plus"></i></div>     
+</div>
+<div class="department_name"> zoology</div>
+</a>
+</div>
+
+<!-- ----------Botany department--------------- -->
+<div class="department_box" id="departmenBotany" style="background-color: rgb(205, 255, 143);">
+<a href="">
+<div class="department_logo_box" >   
+<div class="department_logo"> <img src="/static/data/dna.png" width="80%"  alt=""> </div>  <div class="department_pluse" style="background-color: rgb(104, 174, 30);"><i class="fa-solid fa-plus"></i></div>     
+</div>
+<div class="department_name"> Botany</div></a>
+</div>
+
+<!-- ----------physics department--------------- -->
+
+<div class="department_box" id="departmenphysics" style="background-color: rgb(220,203,255);">
+ <a href="">
+<div class="department_logo_box" >   
+<div class="department_logo"> <img src="/static/data/atome.png" width="100%" alt=""> </div>  <div class="department_pluse" style="background-color: rgb(106,77,170);"><i class="fa-solid fa-plus"></i></div>     
+</div>
+ <div class="department_name"> physics</div></a>
+</div>
+ <!-- ----------chemistry department--------------- -->
+
+<div class="department_box" id="departmenchemistry" style="background-color: rgb(254, 222, 133);">
+<a href="">
+<div class="department_logo_box" >   
+<div class="department_logo"> <i class="fa-solid fa-flask-vial" style="color:rgb(253, 135, 6) ;" ></i> </div>  <div class="department_pluse" style="background-color: rgb(253, 135, 6);"><i class="fa-solid fa-plus"></i></div>     
+</div>
+<div class="department_name"> chemistry</div></a>
+</div>
+</section>
 
 
 
 
+<!-- ---------------------------------screen 3 ------------------------------------------------------------>
+<div class="departmentname" >Department Ranking</div>
 
+<div class="chart-container">
+<canvas id="myChart" height="100%" width="100%"></canvas> <!-- Adjust height here -->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/grap.js"></script>
 
-
-
-
-
-
-
-
-
-
-    <div class="container">
-        <h2>Course Filter</h2>
-        <div class="buttons-container">
-            <a href="{% url 'upload_excel' %}"><button class="button" style="background:red">ADMIN UPLOAD</button></a>
-            <br>
-            <a href="{% url 'BCA' %}"><button class="button">BCA</button></a>
-            <a href="{% url 'BSC(IT)' %}"><button class="button">BSC(IT)</button></a>
-            <a href="{% url 'BSC(PHY)' %}"><button class="button">BSC(PHY)</button></a>
-            <a href="{% url 'BSC(CHE)' %}"><button class="button">BSC(CHE)</button></a>
-            <a href="{% url 'BSC(MAT)' %}"><button class="button">BSC(MAT)</button></a>
-            <a href="{% url 'BSC(BOT)' %}"><button class="button">BSC(BOT)</button></a>
-            <a href="{% url 'BSC(ZOO)' %}"><button class="button">BSC(ZOO)</button></a>
-        </div>
-
-        <!-- Second container for top 3 student profiles -->
-        
-        <div class="profile-container">
-            {% for index, student in top_student.iterrows %}
-            <div class="student-profile">
-                <h3>Top Student {{forloop.counter}}</h3>
-                <div class="profile-details">
-                    <p><strong>Name:</strong>{{student.Name}}</p>
-                    <p><strong>Regd No:</strong> {{student.Regd_No}}</p>
-                    <p><strong>CGPA:</strong>{{student.CGPA}}</p>
-                    <p><strong>SGPA:</strong>{{student.SGPA}}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <h2>Department Performance</h2>
-        <div class="department-performance">
-            {% for index, dept in dept_performance_sorted.iterrows %}
-                <div class="department-performance-item">
-                    <h3>Department: <span class="department-name">{{ dept.Department}}</span></h3>
-                    <p>Average CGPA: <span class="average-cgpa">{{ dept.CGPA|floatformat:"2" }}</span></p>
-                </div>
-            {% endfor %}
-        </div> 
-    </div>
 </body>
 </html>
