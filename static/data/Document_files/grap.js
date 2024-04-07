@@ -2,15 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var ctx = document.getElementById('myChart').getContext('2d');
 
   // Initialize chart with initial data
-  var initialData = [
-    parseFloat(document.getElementById('itInput').value),
-    parseFloat(document.getElementById('bcaInput').value),
-    parseFloat(document.getElementById('mathInput').value),
-    parseFloat(document.getElementById('zooInput').value),
-    parseFloat(document.getElementById('botInput').value),
-    parseFloat(document.getElementById('phyInput').value),
-    parseFloat(document.getElementById('chemInput').value)
-  ];
+  var initialData = [parseFloat(document.getElementById('itInput').value),
+                     parseFloat(document.getElementById('bcaInput').value),
+                     // Add similar lines for other subjects
+                    ];
   
   var myChart = new Chart(ctx, {
     type: 'bar',
@@ -45,15 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update chart data when the input values change
   document.querySelectorAll('input[type="number"]').forEach(function(input) {
     input.addEventListener('input', function() {
-      var newData = [
-        parseFloat(document.getElementById('itInput').value),
-        parseFloat(document.getElementById('bcaInput').value),
-        parseFloat(document.getElementById('mathInput').value),
-        parseFloat(document.getElementById('zooInput').value),
-        parseFloat(document.getElementById('botInput').value),
-        parseFloat(document.getElementById('phyInput').value),
-        parseFloat(document.getElementById('chemInput').value)
-      ];
+      var newData = [parseFloat(document.getElementById('itInput').value),
+                     parseFloat(document.getElementById('bcaInput').value),
+              
+                    ];
       myChart.data.datasets[0].data = newData;
       myChart.update();
     });

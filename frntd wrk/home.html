@@ -6,6 +6,7 @@
 <title>Document</title>
 <link rel="stylesheet" href="/static/css/homee.css">
 <link rel="stylesheet" href="/static/css/add.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -125,11 +126,44 @@
 
 
 <!-- ---------------------------------screen 3 ----------------------------------------------------------->
-<div class="departmentname" >Department Ranking</div>
+<div hidden>
+    <label for="itInput">IT:</label>
+    <input type="number" id="itInput" value="8.5">
+  </div>
 
-<div class="chart-container">
-<canvas id="myChart" height="100%" width="100%"></canvas> <!-- Adjust height here -->
-</div>
+  <div hidden>
+    <label for="bcaInput">BCA:</label>
+    <input type="number" id="bcaInput" value="4">
+  </div>
+
+  <div hidden>
+    <label for="mathInput">MATH:</label>
+    <input type="number" id="mathInput" value="7">
+  </div>
+
+   <div hidden>
+    <label for="zooInput">Zoo:</label>
+    <input type="number" id="zooInput" value="9">
+  </div>
+
+  <div hidden>
+    <label for="botInput">Bot:</label>
+    <input type="number" id="botInput" value="5">
+  </div>
+  
+  <div hidden>
+    <label for="phyInput">Phy:</label>
+    <input type="number" id="phyInput" value="1">
+  </div>
+
+  <div hidden>
+    <label for="chemInput">Chem:</label>
+    <input type="number" id="chemInput" value="9">
+  </div>
+
+
+  <canvas id="myChart" width="400" height="400"></canvas>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/static/js/grap.js"></script>
 
