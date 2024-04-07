@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     parseFloat(document.getElementById('zooInput').value),
     parseFloat(document.getElementById('botInput').value),
     parseFloat(document.getElementById('phyInput').value),
-    parseFloat(document.getElementById('chemInput').value)
+    parseFloat(document.getElementById('chemInput').value),
+    parseFloat(document.getElementById('topInput').value),
   ];
   
   var myChart = new Chart(ctx, {
@@ -52,7 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         parseFloat(document.getElementById('zooInput').value),
         parseFloat(document.getElementById('botInput').value),
         parseFloat(document.getElementById('phyInput').value),
-        parseFloat(document.getElementById('chemInput').value)
+        parseFloat(document.getElementById('chemInput').value),
+        parseFloat(document.getElementById('topInput').value),
+
       ];
       myChart.data.datasets[0].data = newData;
       myChart.update();
