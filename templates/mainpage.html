@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static "css/homee.css" %} ">
+    <link rel="stylesheet" href="{% static "css/add.css" %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section id="firstview">
+        <section id="leaderbox">
+            <div class="leaderbox_text">Leaderbord</div>
+            <div class="leaderbox_type">
+                <a href="" > <span class="alltime">All Time</span></a>
+                <a href=""> <span>Top 10</span></a>
+            </div>
+        </section>
+
+
+
+        
+        <!-- ranking sysytem -->
+        <section class="ranking_contener">
+            {% for student in topstudents %}
+                {% if student.Rank == 2 %}
+                    <div class="rankingbox">
+                        <span id="Student2" class="rankingstudentname">{{ student.Name }}</span>
+                        <div class="rank2">
+                            <span class="rankinnumber">#2</span>
+                            <span class="rankingdepartment">{{ student.Department }}</span>
+                            <span class="rankingcgpa">{{ student.CGPA }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+                {% for student in topstudents %}
+                {% if student.Rank == 1 %}
+                    <div class="rankingbox">
+                        <span id="Student1" class="rankingstudentname">{{ student.Name }}</span>
+                        <div class="rank1">
+                            <span class="rankinnumber">#1</span>
+                            <span class="rankingdepartment">{{ student.Department }}</span>
+                            <span class="rankingcgpa">{{ student.CGPA }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+                {% for student in topstudents %}
+                {% if student.Rank == 3 %}
+                    <div class="rankingbox">
+                        <span id="Student3" class="rankingstudentname">{{ student.Name }}</span>
+                        <div class="rank3">
+                            <span class="rankinnumber">#3</span>
+                            <span class="rankingdepartment">{{ student.Department }}</span>
+                            <span class="rankingcgpa">{{ student.CGPA }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+        </section>
+        
+        </section>
+        
+</body>
+
+</html>

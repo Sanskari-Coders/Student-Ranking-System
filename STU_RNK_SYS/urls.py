@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from STU_RNK_SYS import views as main_views
+from mainpage import views as mainpage_views
 from departmentwiseview import urls as dept_urls
 from datastore import views as data_store_views
 
@@ -28,7 +29,7 @@ from datastore import views as data_store_views
 
 urlpatterns = [
     path('',main_views.login),
-    path('home/',main_views.home,name='HOME'),
+    path('home/',mainpage_views.mainpage,name='HOME'),
     path('upload_excel/',data_store_views.upload_data,name='upload_excel'),
     path('departmentwiseviews/',include(dept_urls)),
     path('admin/', admin.site.urls),
