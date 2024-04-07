@@ -91,7 +91,8 @@ margin-top: 20px;
 .uplodfile_box{
     width: 97%;
     height: 97%;
-    background-color: black;
+    background-color: rgb(1, 23, 72);
+    /* background-color: black; */
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -159,5 +160,11 @@ border-radius: 15px;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 padding: 8px 25px;
 font-size: 15px;
+
+}
+.uplodfile_btn  a{
+    /* color:rgb(53 , 190, 134);
+     */
+     color: rgb(0, 0, 0);
 }
 
