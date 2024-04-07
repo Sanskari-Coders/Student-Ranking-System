@@ -11,12 +11,10 @@ def login(request):
 #     top_students = df.sort_values(by='CGPA', ascending=False).head(3)
 #     top_students['Rank'] = ['1st', '2nd', '3rd'] 
 #     print(top_students)
-#     # dept_performance = df.groupby('Department')['CGPA'].mean().reset_index()
-#     # dept_performance_sorted = dept_performance.sort_values(by='CGPA', ascending=False)
-#     context = {
-#         'top_student': top_students
-#         # 'dept_performance_sorted': dept_performance_sorted, 
-#     }
+    context = {
+        'top_student': top_students,
+        'dept_performance_sorted': dept_performance_sorted, 
+    }
 #     print(context)
 #     return render(request,'home.html',context)
 

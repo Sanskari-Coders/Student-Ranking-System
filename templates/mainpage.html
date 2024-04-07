@@ -7,6 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="{% static "css/homee.css" %} ">
     <link rel="stylesheet" href="{% static "css/add.css" %} ">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -58,8 +59,135 @@
                 {% endif %}
                 {% endfor %}
         </section>
-        </section>
-        
-</body>
+    </section>
 
+    
+<!-- ---------------------------------screen 2 -------------------------------------------------------------------->
+    <span></span>
+    <div class="departmentname" >Department Result</div>
+
+    <section class="department_container">
+<!-- ----------BCA department----------------------- -->
+        <div class="department_box" id="departmentBCA">
+            <a href="{% url "BCAIT" %}">
+                <div class="department_logo_box">   
+                    <div class="department_logo" > <i class="fa-solid fa-code" style="color:rgb(91, 97, 217);"></i></div> 
+                    <div class="department_pluse"><i class="fa-solid fa-plus"></i> </div>      
+                </div>
+                <div class="department_name"> BCA/IT</div>
+            </a>
+        </div>
+
+<!-- ----------MATH department---------------------->
+        <div class="department_box" id="departmentMATH" style="background-color: rgb(206, 253, 255);">
+            <a href="{% url "BSC(MAT)" %}">
+                <div class="department_logo_box">   
+                    <div class="department_logo" ><i class="fa-solid fa-calculator" style="color: rgb(75, 184, 189);"></i></div>   
+                    <div class="department_pluse" style="background-color: rgb(75, 184, 189);"> <i class="fa-solid fa-plus"></i> </div>      
+                </div>
+                <div class="department_name"> MATH</div>
+            </a>
+        </div>
+
+ <!-- ----------zoology department------------------>
+        <div class="department_box" id="departmenzoology" style="background-color: rgb(255, 213, 224);">
+            <a href="{% url "BSC(ZOO)" %}">
+                <div class="department_logo_box" >   
+                    <div class="department_logo"> <img src="/static/data/zoology.png" width="80%" alt=""> </div>  
+                    <div class="department_pluse" style="background-color: rgb(220, 24, 84);"><i class="fa-solid fa-plus"></i></div>     
+                </div>
+                <div class="department_name"> zoology</div>
+            </a>
+        </div>
+
+        
+<!-- ----------Botany department--------------- -->
+        <div class="department_box" id="departmenBotany" style="background-color: rgb(205, 255, 143);">
+            <a href="BSC(BOT)">
+                <div class="department_logo_box" >   
+                    <div class="department_logo"> <img src="/static/data/dna.png" width="80%"  alt=""> </div>  
+                    <div class="department_pluse" style="background-color: rgb(104, 174, 30);"><i class="fa-solid fa-plus"></i></div>     
+                </div>
+                <div class="department_name"> Botany</div>
+            </a>
+        </div>
+    
+    <!-- ----------physics department--------------- -->
+        <div class="department_box" id="departmenphysics" style="background-color: rgb(220,203,255);">
+            <a href="{% url "BSC(PHY)" %}">
+                <div class="department_logo_box" >   
+                    <div class="department_logo"> <img src="/static/data/atome.png" width="100%" alt=""> </div>  
+                    <div class="department_pluse" style="background-color: rgb(106,77,170);"><i class="fa-solid fa-plus"></i></div>     
+                </div>
+                <div class="department_name"> physics</div>
+            </a>
+        </div>
+
+     <!-- ----------chemistry department--------------- -->
+        <div class="department_box" id="departmenchemistry" style="background-color: rgb(254, 222, 133);">
+            <a href="{% url "BSC(CHE)" %}">
+                <div class="department_logo_box" >   
+                    <div class="department_logo"> <i class="fa-solid fa-flask-vial" style="color:rgb(253, 135, 6) ;" ></i> </div>  
+                    <div class="department_pluse" style="background-color: rgb(253, 135, 6);"><i class="fa-solid fa-plus"></i></div>     
+                </div>
+                <div class="department_name"> chemistry</div>
+            </a>
+        </div>
+    </section>
+
+    
+<!-- ---------------------------------screen 3 ------------------------------------------------------------>
+{% for dept in dept_performance %}
+    {% if dept.Department == 'BSC(IT)' %}
+        <div hidden>
+            <label for="itInput">IT:</label>
+            <input type="number" id="itInput" value="{{ dept.CGPA }}">
+        </div>
+    {% elif dept.Department == 'BCA' %}
+        <div hidden>
+            <label for="bcaInput">BCA:</label>
+            <input type="number" id="bcaInput" value="{{ dept.CGPA }}">
+        </div>
+    {% elif dept.Department == 'BSC(MAT)' %}
+        <div hidden>
+            <label for="mathInput">MATH:</label>
+            <input type="number" id="mathInput" value="{{ dept.CGPA }}">
+        </div>
+    {% elif dept.Department == 'BSC(ZOO)' %}
+        <div hidden>
+            <label for="zooInput">Zoo:</label>
+            <input type="number" id="zooInput" value="{{ dept.CGPA }}">
+        </div>
+    {% elif dept.Department == 'BSC(BOT)' %}
+        <div hidden>
+            <label for="botInput">Bot:</label>
+            <input type="number" id="botInput" value="{{ dept.CGPA }}">
+        </div>
+    {% elif dept.Department == 'BSC(PHY)' %}
+        <div hidden>
+            <label for="phyInput">Phy:</label>
+            <input type="number" id="phyInput" value="{{ dept.CGPA }}">
+        </div>
+    {% elif dept.Department == 'BSC(CHE)' %}
+        <div hidden>
+            <label for="chemInput">Chem:</label>
+            <input type="number" id="chemInput" value="{{ dept.CGPA }}">
+        </div>
+    {% endif %}
+{% endfor %}
+
+     <!-- ---------------------- unchangeable main value -->
+    <div hidden>
+        <label for="topInput">top:</label>
+        <input type="number" id="topInput" value="10">
+    </div>
+
+
+  <div class="chart-container">
+  <canvas id="myChart" width="100%" height="100%"></canvas>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static "js/grap.js" %}"></script> 
+</body>
 </html>
