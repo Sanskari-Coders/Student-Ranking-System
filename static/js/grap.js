@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
           backgroundColor: [
             'rgb(91, 97, 217)',
             'rgb(218, 223, 255)',
-            'rgb(255, 213, 224)',
-            'rgba(220,203,255)',
-            'rgb(254, 222, 133)',
+            'rgb(220, 24, 84)',
+            'rgba(106,77,170)',
+            'rgb(253, 135, 6)',
             'rgb(205,255,143)',
             'rgb(206, 253, 255)'
             
