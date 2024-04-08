@@ -1,37 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Information</title>
-    <style>
-        .student-info {
-            border-bottom: 2px solid #4CAF50;
-            /* Green border */
-            border-radius: 5px;
-            padding: 10px;
-            background-color: #f2f2f2;
-            /* Light gray background */
-            white-space: nowrap;
-            /* Prevent line breaks */
-        }
+    {% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static "css/department.css" %}">
+<title>Department</title>
+<body>
 
-        .student-info p {
-            display: inline-block;
-            margin: 5px 20px 5px 0;
-            color: #333;
-            /* Dark gray text */
-        }
 
-        .student-info p strong {
-            margin-right: 5px;
-            color: #4CAF50;
-            /* Green text */
-        }
-    </style>
+  <section class="uplodfile_contener">
+    <div class="uplodfile_box">
+        <div class="uplodfiletext">
+            <div class="fileuplod_date">8 April 2024</div>
+            {% for index, student in sorted_df.iterrows %}
+            {% if forloop.counter == 1 %}
+            {% if student.Department == 'BCAIT' %}{% endif %}
+            <div class="examstudent">BCA & Information Technology</div>
+            <div class="totalstudent">{{ forloop.length }}</div>
+            {% endif %}
+            {% endfor %}
+
+            
+        </div>
+    
+    
+        <div class="uplodfilearea">
+    <div class="uplodfilear_logo"> <img src="/static/data/sharing (1).png" width="100%"  alt=""></div>
+    <div class="uplodfile_btn_box">
+    </div>
+    </div>
+    
+        </div>
+    </div>
+    
+    </section>
+
+<!-------------- listt of Student1 ---------------------->
+
+  <section class="department_list_contener">
+    {% for index, student in sorted_df.iterrows %}
+    <div class="department_list_box">
+    <div class="list_number">#{{ forloop.counter }}</div> 
+    <div class="list_name">{{ student.Name }}</div>
+    <div class="list_cgpa"> {{ student.CGPA }}</div>     
+    </div>
+    {% endfor %}
+  </section>
+  
+ </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
 </head>
-
 <body style="background-color: black;">
     {% for index, student in sorted_df.iterrows %}
     <div class="student-info">
@@ -44,9 +99,5 @@
         <p><strong>Department:</strong> {{ student.Department }}</p>
     </div>
 {% endfor %}
-
-
-
 </body>
-
-</html>
+</html> {% endcomment %}
