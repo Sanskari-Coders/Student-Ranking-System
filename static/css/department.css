@@ -117,23 +117,3 @@
     width: 100%;
     height: 60%;
 }
-.uplodfile_btn_box{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.uplodfile_btn{
-background-color: white;
-border-radius: 15px;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-padding: 8px 25px;
-font-size: 15px;
-
-}
-.uplodfile_btn  a{
-    /* color:rgb(53 , 190, 134);
-     */
-     color: rgb(0, 0, 0);
-}
