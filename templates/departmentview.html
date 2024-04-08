@@ -14,55 +14,52 @@
         <div class="uplodfiletext">
             <div class="fileuplod_date">8 April 2024</div>
             {% for index, student in sorted_df.iterrows %}
-            
             {% if forloop.counter == 1 %}
-
-                {% if student.Department == 'BSC(IT)' %}
+                {% if isoverall == True %}
+                    <div class="examstudent">Overall Ranking</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                {% else %}
+                    {% if student.Department == 'BSC(IT)' %}
+                        <div class="examstudent">BCA & Information Technology</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
+                
+                    {% if student.Department == 'BCA' %}
                     <div class="examstudent">BCA & Information Technology</div>
-                <div class="totalstudent">{{ students_count }}</div>
-                {% endif %}
-            
-                {% if student.Department == 'BCA' %}
-                <div class="examstudent">BCA & Information Technology</div>
-                <div class="totalstudent">{{ students_count }}</div>
-                {% endif %}
-                
-                {% if student.Department == 'BSC(PHY)' %}
-                <div class="examstudent">Physics</div>
-                <div class="totalstudent">{{ students_count }}</div>
-                {% endif %}
-                
-                {% if student.Department == 'BSC(CHE)' %}
-                <div class="examstudent">Chemistry</div>
-                <div class="totalstudent">{{ students_count }}</div>
-                {% endif %}
-                
-                {% if student.Department == 'BSC(MAT)' %}
-                <div class="examstudent">Mathematics</div>
-                <div class="totalstudent">{{ students_count }}</div>
-                {% endif %}
-                
-                {% if student.Department == 'BSC(BOT)' %}
-                <div class="examstudent">Botany</div>
-                <div class="totalstudent">{{ students_count }}</div>
-                {% endif %}
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
+                    
+                    {% if student.Department == 'BSC(PHY)' %}
+                    <div class="examstudent">Physics</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
+                    
+                    {% if student.Department == 'BSC(CHE)' %}
+                    <div class="examstudent">Chemistry</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
+                    
+                    {% if student.Department == 'BSC(MAT)' %}
+                    <div class="examstudent">Mathematics</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
+                    
+                    {% if student.Department == 'BSC(BOT)' %}
+                    <div class="examstudent">Botany</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
 
-                {% if student.Department == 'BSC(ZOO)' %}
-                <div class="examstudent">Zoology</div>
-                <div class="totalstudent">{{ students_count }}</div>
+                    {% if student.Department == 'BSC(ZOO)' %}
+                    <div class="examstudent">Zoology</div>
+                    <div class="totalstudent">{{ students_count }}</div>
+                    {% endif %}
                 {% endif %}
-                
-                
-            
-            
             {% endif %}
             {% endfor %}
-
-            
         </div>
     
     
-        <div class="uplodfilearea">
+    <div class="uplodfilearea">
     <div class="uplodfilear_logo"> <img src="/static/data/sharing (1).png" width="100%"  alt=""></div>
     <div class="uplodfile_btn_box">
     </div>

@@ -20,8 +20,9 @@ def mainpage(request):
     
     dept_performance = df.groupby('Department')['CGPA'].mean().reset_index()
     dept_performance_sorted = dept_performance.sort_values(by='CGPA', ascending=False).to_dict(orient='records')
-    print(topstudents.__len__())
-    print(dept_performance_sorted)
+    
+    total_students=df.sort_values(by='CGPA',ascending=False).__len__()
     context = {'topstudents': topstudents,
-               'dept_performance':dept_performance_sorted}
+               'dept_performance':dept_performance_sorted,
+               'total_students':total_students}
     return render(request, 'mainpage.html', context)

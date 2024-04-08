@@ -18,6 +18,7 @@
             <div class="leaderbox_type">
                 <a href="" > <span class="alltime">All Time</span></a>
                 <a href=""> <span>Top 10</span></a>
+                <a href="{% url "OVERALL" %}"> <span>Overal </span></a></div>
             </div>
         </section>
         <!-- ranking sysytem -->
@@ -192,7 +193,7 @@
       <div class="uplodfiletext">
         <div class="fileuplod_date">8 April 2024</div>
         <div class="examstudent">Appeared Students</div>
-        <div class="totalstudent">53</div>
+        <div class="totalstudent">{{total_students}}</div>
         <div class="passing">Last Updated-<span style="color: rgb(53 , 190, 134);">recently</span></div>
       </div>
 
