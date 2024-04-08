@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
       scales: {
         yAxes: [{
           ticks: {
-            beginAtZero: true
+            beginAtZero: false, 
+            stepSize: 0.1
+        
           }
         }]
       }
