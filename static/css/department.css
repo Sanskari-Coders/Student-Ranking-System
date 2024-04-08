@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.department_list_contener{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
+}
+.department_list_box{
+    width: 97%;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.495);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.list_number{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list_name{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list_cgpa{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.uplodfile_contener{
+    width:100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.uplodfile_box{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(1, 23, 72);
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+}
+.uplodfiletext{
+    width: 60%;
+    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 10px;
+  gap: 5px;
+}
+.fileuplod_date{
+    color: gray;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.examstudent{
+    color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.totalstudent{
+    color: rgb(53 , 190, 134) ;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.passing{
+    color: white;
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.uplodfilearea{
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.uplodfilear_logo{
+    width: 100%;
+    height: 60%;
+}
+.uplodfile_btn_box{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.uplodfile_btn{
+background-color: white;
+border-radius: 15px;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+padding: 8px 25px;
+font-size: 15px;
+
+}
+.uplodfile_btn  a{
+    /* color:rgb(53 , 190, 134);
+     */
+     color: rgb(0, 0, 0);
+}
