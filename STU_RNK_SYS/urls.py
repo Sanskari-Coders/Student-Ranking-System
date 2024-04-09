@@ -30,8 +30,14 @@ from datastore import views as data_store_views
 urlpatterns = [
     path('',main_views.login),
     path('home/',mainpage_views.mainpage,name='HOME'),
+
+    path('topten', main_views.topten,name='topten'),
+    path('OVERALL',main_views.OVERALL,name='OVERALL'),
+    
     path('upload_excel/',data_store_views.upload_data,name='upload_excel'),
+    
     path('departmentwiseviews/',include(dept_urls)),
+    
     path('admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
