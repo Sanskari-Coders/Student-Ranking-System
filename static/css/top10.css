@@ -45,8 +45,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     text-decoration: none;
     color: black;
   }
-  .top10{
-    background-color: white;
+  .top10 , .overall{
     padding: 5px 10px;
     border-radius: 20px;
   }
