@@ -9,22 +9,24 @@
 </head>
 <body>
    <section class="top10_contener">
+
     <section id="leaderbox">
     <div class="leaderbox_text">Leaderbord</div>
     <div class="leaderbox_type">
     <a href="{% url "HOME" %}" > <span >All Time</span></a>
-    <a href="/frntd wrk/top10.html"> <span  style="background-color: white;" class="top10">Top 10</span></a>
-    <a href="{% url "OVERALL" %}"> <span >Overal </span></a></div></div>
+    <a href="{% url "topten" %}"> <span class="top10">Top 10</span></a>
+    <a href="{% url "OVERALL" %}"> <span class="overall" style="background-color: white;" >Overal </span></a></div></div>
     </section>
 
 
     <section class="top10_contener_logo">
-    <img src="/static/data/top10.png" width="70%" height="100%" alt="">
+    <img src=" {% static "data/Online test-pana.svg" %} " width="70%" height="100%" alt="">
     </section>
    </section>
 
 
 <section class="top10_list_contener">
+
     {% for index, student in sorted_df.iterrows %}
     <div class="top10_list_box">
         <div class="top10_list_number"> #{{forloop.counter}}</div>

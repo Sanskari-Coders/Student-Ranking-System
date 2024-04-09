@@ -19,7 +19,7 @@ def OVERALL(request):
         'isoverall':overall,  
     }
     print(sorted_df)
-    return render(request, 'top10.html',context=context)
+    return render(request, 'overal.html',context=context)
 
 
 def topten(request):
