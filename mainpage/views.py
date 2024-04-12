@@ -3,6 +3,7 @@ from datastore.models import Student
 import pandas as pd
 # Create your views here.
 import pandas as pd
+import datetime
 
 
 def mainpage(request):
@@ -17,12 +18,13 @@ def mainpage(request):
     topstudents = df.sort_values(by='CGPA', ascending=False).head(3).to_dict(orient='records')
     for i, student in enumerate(topstudents):
         student['Rank'] = i + 1
-    
+    date=datetime.date.today()
     dept_performance = df.groupby('Department')['CGPA'].mean().reset_index()
     dept_performance_sorted = dept_performance.sort_values(by='CGPA', ascending=False).to_dict(orient='records')
     
     total_students=df.sort_values(by='CGPA',ascending=False).__len__()
     context = {'topstudents': topstudents,
                'dept_performance':dept_performance_sorted,
-               'total_students':total_students}
+               'total_students':total_students,
+               'current_date':date}
     return render(request, 'mainpage.html', context)
