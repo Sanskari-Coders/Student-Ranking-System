@@ -8,17 +8,19 @@ import pandas as pd
 def upload_data(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
-        df = pd.read_excel(myfile)
-        Student.objects.all().delete()
+        if Student.objects !=None:
+            Student.objects.all().delete()
+            df = pd.read_excel(myfile)
         for index, row in df.iterrows():
             student = Student.objects.create(
-                registration_number=row['STUDENT REGISTRATION NUMBER'],
-                name=row['STUDENT NAME'],
-                department=row['DEPARTMENT'],
-                semester=row['SEMESTER'],
+                registration_number=row['Regd_No'],
+                name=row['Name'],
+                department=row['Department'],
+                semester=row['Semester'],
                 sgpa=row['SGPA'],
                 cgpa=row['CGPA']
             )
             student.save()
         return redirect('HOME')
     return render(request, 'admin.html')
+
