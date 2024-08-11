@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'STU_RNK_SYS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER':'postgres',
-        'PASSWORD':'ZbxsRHbTzXtUDxNbbanduayuzNOHvgnj',
-        'HOST':'roundhouse.proxy.rlwy.net',
-        'PORT':'37439',
+        'NAME': 'pragati',
+        'USER': 'ANISH',
+        'PASSWORD': 'rFaih5EKD8Wf',
+        'HOST': 'ep-little-lab-a1d84owp.ap-southeast-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 # settings.py

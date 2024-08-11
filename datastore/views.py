@@ -13,10 +13,10 @@ def upload_data(request):
             df = pd.read_excel(myfile)
         for index, row in df.iterrows():
             student = Student.objects.create(
-                registration_number=row['Regd_No'],
-                name=row['Name'],
-                department=row['Department'],
-                semester=row['Semester'],
+                registration_number=row['STUDENT REGISTRATION NUMBER'],
+                name=row['STUDENT NAME'],
+                department=row['DEPARTMENT'],
+                semester=row['SEMESTER'],
                 sgpa=row['SGPA'],
                 cgpa=row['CGPA']
             )
